@@ -14,12 +14,12 @@
 
         <div class="itemdatos">
 
-          <ion-label class="centrar-text">Usuario</ion-label>
-          <ion-input formControlName="email" type="text">
-            <ion-icon id="ico-mail" name="person" item-start class="icono-input"></ion-icon>
+          <ion-label class="centrar-text">Email</ion-label>
+          <ion-input formControlName="email" type="email">
+            <ion-icon id="ico-mail" name="mail" item-start class="icono-input"></ion-icon>
           </ion-input>
           <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
-            Es necesario un Usuario Mobil.
+            Es necesario un coreo electronico.
           </span>
           <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.email">
             Ingrese un correo valido.
@@ -38,21 +38,6 @@
             Es necesario ingresar una contraseña.
           </span>    
 
-          <!--
-                      <ion-label class="centrar-text mt-2">Ingrese número de celular</ion-label>
-          <ion-item lines="full">
-
-            <ion-input inputmode="numeric" formControlName="mobile" input type="tel " maxlength="10" required>
-            </ion-input>
-          </ion-item>
-          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.required">
-            Es necesario un número de celular.
-          </span>
-          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.pattern">
-            Ingrese un número de celular valido.
-          </span>
-          -->
-
         </div>
 
         <div class="botones">
@@ -63,6 +48,5 @@
       </ion-list>
     </form>
 
-    <span id="lbl-pagina" >www.seproamerica.com.ec</span>
   </div>
 </ion-content>
