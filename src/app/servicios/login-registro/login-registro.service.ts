@@ -1,11 +1,11 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { tap } from 'rxjs/operators';
+import { SignIn } from "src/app/interfaces/employee/signin";
+import { SignInResponse } from "src/app/interfaces/response/signin";
+import { Names } from "src/app/interfaces/employee/name";
 
-interface SignInResponse {
-  token: string;
-}
 
 @Injectable({
   providedIn: 'root'
@@ -16,13 +16,19 @@ export class ClienteWAService {
 
   constructor(private http: HttpClient) { }
 
-  signin(email: string, password:string): Observable<SignInResponse>{
+  signin(data: SignIn): Observable<SignInResponse>{
     const endpoint:string = this.DJANGO_DOMAIN_NAME+'users/operationalSignin/';
-    const body = {email: email, password: password};
-    return this.http.post<SignInResponse>(endpoint, body).pipe(
+    return this.http.post<SignInResponse>(endpoint, data).pipe(
       tap(response => {
         localStorage.setItem('token', response.token);
+        location.reload();
       }),
     );
+  }
+
+  getNames(token:string): Observable<Names>{
+    const endpoint:string = this.DJANGO_DOMAIN_NAME+'users/clientNames/';
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.get<Names>(endpoint, { headers: headers })
   }
 }

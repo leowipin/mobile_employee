@@ -11,6 +11,10 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
+import { ClienteWAService } from './servicios/login-registro/login-registro.service';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 
 
@@ -18,8 +22,8 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule,ReactiveFormsModule, AngularFireAuthModule, AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebase)],
-  providers: [BarcodeScanner, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+    AngularFireModule.initializeApp(environment.firebase), HttpClientModule],
+  providers: [BarcodeScanner, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ClienteWAService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

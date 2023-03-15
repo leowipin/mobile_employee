@@ -23,13 +23,6 @@ export class HomeperfilPage implements OnInit {
 
   ngOnInit() {
 
-    this.route.queryParams.subscribe(params => {
-      console.log(params); // { order: "popular" 
-      this.recibido= params;
-      this.nombreur = this.recibido.datos.name;
-      this.apellidour = this.recibido.datos.lastname;
-    }
-    );
   }
 
   async presentAlertConfirm() {

@@ -196,7 +196,7 @@ export class EditarperfilPage implements OnInit {
 
 
   finEdicion() {
-    this.navCtrl.navigateForward("/perfil", {
+    this.navCtrl.navigateForward("/homeperfil", {
       queryParams: {
         datos: this.ionicForm.value, nombreusua: this.nombreu, apellidousua: this.apellidou,
         emailusua: this.emailu, fechanacimientousua: this.fechanacimientou, celularusua: this.celularu, cedulausua: this.cedulau,
