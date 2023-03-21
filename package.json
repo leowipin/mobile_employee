@@ -1,5 +1,5 @@
 {
-  "name": "cliente",
+  "name": "operador",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -31,6 +31,7 @@
     "@capacitor/haptics": "4.1.0",
     "@capacitor/keyboard": "4.1.1",
     "@capacitor/status-bar": "4.1.1",
+    "@ionic-native/camera": "^5.36.0",
     "@ionic-native/geolocation": "^5.36.0",
     "@ionic-native/native-geocoder": "^5.36.0",
     "@ionic/angular": "^6.1.9",
@@ -42,7 +43,6 @@
     "ion2-calendar": "^3.5.0",
     "ionicons": "^6.0.3",
     "moment": "^2.29.4",
-    "phonegap-plugin-barcodescanner": "^8.1.0",
     "rxfire": "^6.0.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",

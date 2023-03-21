@@ -1,4 +1,4 @@
-package io.cliente.sepro;
+package io.operador.sepro;
 
 import com.getcapacitor.BridgeActivity;
 
