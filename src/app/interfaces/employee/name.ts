@@ -1,4 +1,3 @@
-export interface Names {
-    first_name:string,
-    last_name:string,
+export interface Email {
+    email:string,
 }

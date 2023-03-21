@@ -13,8 +13,7 @@ import { ClienteWAService } from './servicios/login-registro/login-registro.serv
 })
 export class AppComponent {
   recibido: any;
-  nombreur: any;
-  apellidour: any;
+  email: any;
 
   constructor(private route: ActivatedRoute, private navCtrl: NavController, private barcodeScanner: BarcodeScanner, private clienteWAService: ClienteWAService) { }
 
@@ -45,8 +44,7 @@ export class AppComponent {
       this.clienteWAService.getNames(token).subscribe(
         (response) => {
           // Actualizar detalles del usuario en el menú de hamburguesas
-          this.nombreur = response.first_name;
-          this.apellidour = response.last_name;
+          this.email = response.email;
         },
         (error) => {
           // Manejar el error de la solicitud HTTP
@@ -55,8 +53,7 @@ export class AppComponent {
       );
     } else {
       // Si el token no está presente en el LocalStorage, mostrar el menú de hamburguesas con el nombre y apellido por defecto
-      this.nombreur = "Nombre";
-      this.apellidour = "Apellido";
+      this.email = "";
     }
   }
 
