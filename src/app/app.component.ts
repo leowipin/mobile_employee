@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { saveConfig } from '@ionic/core';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx'
 import { ClienteWAService } from './servicios/login-registro/login-registro.service';
-
+import { UserDataService } from './servicios/login-registro/userDataService';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +13,13 @@ import { ClienteWAService } from './servicios/login-registro/login-registro.serv
 })
 export class AppComponent {
   recibido: any;
-  email: any;
+  name: string;
 
-  constructor(private route: ActivatedRoute, private navCtrl: NavController, private barcodeScanner: BarcodeScanner, private clienteWAService: ClienteWAService) { }
+  constructor(private route: ActivatedRoute, private navCtrl: NavController, private barcodeScanner: BarcodeScanner, private clienteWAService: ClienteWAService, private userDataService: UserDataService) {
+    this.userDataService.name$.subscribe(name => {
+      this.name = name;
+    });
+   }
 
   myDate: String = new Date().toISOString();
 
@@ -44,16 +48,15 @@ export class AppComponent {
       this.clienteWAService.getNames(token).subscribe(
         (response) => {
           // Actualizar detalles del usuario en el menú de hamburguesas
-          this.email = response.email;
+          this.name = response.first_name;
         },
         (error) => {
           // Manejar el error de la solicitud HTTP
-          console.log(error);
         }
       );
     } else {
       // Si el token no está presente en el LocalStorage, mostrar el menú de hamburguesas con el nombre y apellido por defecto
-      this.email = "";
+      this.name = "";
     }
   }
 
