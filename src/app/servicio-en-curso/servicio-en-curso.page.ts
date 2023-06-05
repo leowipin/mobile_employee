@@ -4,6 +4,8 @@ import { MenuController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
 import { FulltrackComponent } from '../fulltrack/fulltrack.component';
+import { ModalMensajeComponent } from  '../modal-mensaje/modal-mensaje.component';
+
 @Component({
   selector: 'app-servicio-en-curso',
   templateUrl: './servicio-en-curso.page.html',
@@ -176,4 +178,14 @@ export class ServicioEnCursoPage implements OnInit {
     let result = await alert.onDidDismiss();
     console.log(result);
   }
+
+  async openModal() {
+    const modal = await this.modalController.create({
+      component: ModalMensajeComponent,
+    });
+
+    await modal.present();
+  }
+
 }
+

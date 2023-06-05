@@ -13,13 +13,13 @@ import { environment } from '../environments/environment';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 import { ClienteWAService } from './servicios/login-registro/login-registro.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ModalMensajeComponent } from 'src/app/modal-mensaje/modal-mensaje.component';
 
 
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,ModalMensajeComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule,ReactiveFormsModule, AngularFireAuthModule, AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase), HttpClientModule],
