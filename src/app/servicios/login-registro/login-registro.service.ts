@@ -5,7 +5,7 @@ import { tap } from 'rxjs/operators';
 import { SignIn } from "src/app/interfaces/employee/signin";
 import { SignInResponse } from "src/app/interfaces/response/signin";
 import { Name } from "src/app/interfaces/employee/name";
-
+import { DateService } from "src/app/interfaces/employee/dateservice";
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +29,10 @@ export class ClienteWAService {
     const endpoint:string = this.DJANGO_DOMAIN_NAME+'users/phoneName/';
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
     return this.http.get<Name>(endpoint, { headers: headers })
+  }
+  getDateService(token: string): Observable<DateService>{
+    const endpoint: string = this.DJANGO_DOMAIN_NAME+'services/phoneAccountOrder/';
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.get<DateService>(endpoint, { headers: headers })
   }
 }
