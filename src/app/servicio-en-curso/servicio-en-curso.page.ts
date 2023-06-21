@@ -6,6 +6,8 @@ import { ModalController } from '@ionic/angular';
 import { FulltrackComponent } from '../fulltrack/fulltrack.component';
 import { ModalMensajeComponent } from  '../modal-mensaje/modal-mensaje.component';
 import { ClienteWAService } from '../servicios/login-registro/login-registro.service';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-servicio-en-curso',
   templateUrl: './servicio-en-curso.page.html',
@@ -40,6 +42,7 @@ export class ServicioEnCursoPage implements OnInit {
       },
       (error) => {
         // Manejar el error de la solicitud HTTP
+         this.toastr.error('Ocurrió un error al obtener los datos del servicio', 'Error');
       }
     );
   }
