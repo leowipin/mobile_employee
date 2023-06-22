@@ -6,8 +6,7 @@ import { ModalController } from '@ionic/angular';
 import { FulltrackComponent } from '../fulltrack/fulltrack.component';
 import { ModalMensajeComponent } from '../modal-mensaje/modal-mensaje.component';
 import { ClienteWAService } from '../servicios/login-registro/login-registro.service';
-import { ToastrService } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-servicio-en-curso',
@@ -31,13 +30,14 @@ export class ServicioEnCursoPage implements OnInit {
     public alertController: AlertController,
     private modalController: ModalController,
     private clienteWAService: ClienteWAService,
-    public toastr: ToastrService
+    private httpClient: HttpClient
   ) {}
   ngOnInit() {
     this.getDateService();
   }
 
   getDateService() {
+    let errorMessage: string;
     const token = localStorage.getItem('token');
     this.clienteWAService.getDateService(token).subscribe(
       (response: any) => {
@@ -47,10 +47,12 @@ export class ServicioEnCursoPage implements OnInit {
       },
       (error) => {
         // Manejar el error de la solicitud HTTP
-        this.toastr.error(
-          'Ocurrió un error al obtener los datos del servicio',
-          'Error'
-        );
+        console.error(error); // Imprime el error en la consola para fines de depuración
+
+        // Muestra un mensaje de error en la interfaz visual
+        errorMessage = 'Ocurrió un error al obtener los datos del servicio.';
+        // Asigna el mensaje de error a una propiedad en tu componente que se mostrará en la interfaz
+        errorMessage = errorMessage;
       }
     );
   }

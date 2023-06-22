@@ -2,7 +2,7 @@
 
 </ion-header>
 
-<ion-content >
+<ion-content>
   <div class="front">
     <div>
       <ion-buttons slot="start">
@@ -30,39 +30,44 @@
     </div>
     <div class="datos2">
       <ion-list>
-        <ion-label class= "fijo">Encargado del Servicio</ion-label>
-      <ion-item>
-        <ion-label class="ion-text-wrap">{{datosServicio.employee_first_name}} {{datosServicio.employee_last_name}}</ion-label>
-      </ion-item>
-        <ion-label class= "fijo"> Nombre del cliente </ion-label>
-      <ion-item>
-        <ion-label class="ion-text-wrap"> {{datosServicio.client_first_name}} {{datosServicio.client_last_name}}</ion-label>
-      </ion-item>
-        <ion-label class= "fijo">Contacto directo del cliente </ion-label> 
-      <ion-item>
-        <ion-label>{{datosServicio.client_phone_number}}</ion-label>
-      </ion-item>  
-      <ion-label class= "fijo">Direccion del Servicio</ion-label>
-      <ion-item>
-            <ion-label>Av. las Americas 320{{cedulaur}}</ion-label>
-      </ion-item>    
-      <ion-label class="negrita ">Fecha de inicio:</ion-label>
-    <ion-item>
-      <ion-label> {{datosServicio.start_date}}</ion-label>
-    </ion-item>
-    <ion-label class="negrita"> Hora de inicio: </ion-label>
-    <ion-item>
-      <ion-label> {{datosServicio.start_time}}</ion-label>
-    </ion-item>
-    <ion-label class="negrita ">Fecha de Finalización: </ion-label>
-      <ion-item>
-        <ion-label>{{datosServicio.end_date}}</ion-label>
-      </ion-item>
-          <ion-label class="negrita"> Hora de Finalización: </ion-label>
-    <ion-item>    
-        <ion-label>{{datosServicio.end_time}}</ion-label>
-      </ion-item>
+        <ion-label class="fijo">Encargado del Servicio</ion-label>
+        <ion-item>
+          <ion-label class="ion-text-wrap">{{datosServicio.employee_first_name}}
+            {{datosServicio.employee_last_name}}</ion-label>
+        </ion-item>
+        <ion-label class="fijo"> Nombre del cliente </ion-label>
+        <ion-item>
+          <ion-label class="ion-text-wrap"> {{datosServicio.client_first_name}}
+            {{datosServicio.client_last_name}}</ion-label>
+        </ion-item>
+        <ion-label class="fijo">Contacto directo del cliente </ion-label>
+        <ion-item>
+          <ion-label>{{datosServicio.client_phone_number}}</ion-label>
+        </ion-item>
+        <ion-label class="fijo">Direccion del Servicio</ion-label>
+        <ion-item>
+          <ion-label>Av. las Americas 320{{cedulaur}}</ion-label>
+        </ion-item>
+        <ion-label class="negrita ">Fecha de inicio:</ion-label>
+        <ion-item>
+          <ion-label> {{datosServicio.start_date}}</ion-label>
+        </ion-item>
+        <ion-label class="negrita"> Hora de inicio: </ion-label>
+        <ion-item>
+          <ion-label> {{datosServicio.start_time}}</ion-label>
+        </ion-item>
+        <ion-label class="negrita ">Fecha de Finalización: </ion-label>
+        <ion-item>
+          <ion-label>{{datosServicio.end_date}}</ion-label>
+        </ion-item>
+        <ion-label class="negrita"> Hora de Finalización: </ion-label>
+        <ion-item>
+          <ion-label>{{datosServicio.end_time}}</ion-label>
+        </ion-item>
       </ion-list>
+      <div *ngIf="errorMessage">
+        <p>{{ errorMessage }}</p>
+      </div>
       <ion-button shape="round" (click)="openModal()">Finalizar Servicio</ion-button>
     </div>
 
@@ -74,14 +79,6 @@
 
 
 
-   
-
-
-      
-      
-
-
-   
 
 
 
@@ -89,7 +86,15 @@
 
 
 
-    
+
+
+
+
+
+
+
+
+
   </div>
 
 
