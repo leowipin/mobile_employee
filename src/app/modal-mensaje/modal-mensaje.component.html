@@ -1,19 +1,19 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Fin Servicio
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Fin Servicio
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <app-calificar-servicio>
     <app-calificar-servicio>
-      <ion-item>
+    </app-calificar-servicio>
+    <ion-item>
         <ion-label position="floating">Mensaje</ion-label>
         <ion-textarea [(ngModel)]="message"></ion-textarea>
-      </ion-item>
-      <ion-button shape="round" color="danger" (click)="cerrar()">Cancelar</ion-button>
+    </ion-item>
+    <ion-button shape="round" color="danger" (click)="cerrar()">Cancelar</ion-button>
 
-      <ion-button shape="round" (click)="confirm()" [disabled]="!message">Ok</ion-button>
+    <ion-button shape="round" (click)="confirm()" [disabled]="!message">Ok</ion-button>
 </ion-content>
