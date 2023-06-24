@@ -36,6 +36,15 @@ export class ServicioEnCursoPage implements OnInit {
     this.getDateService();
   }
 
+  async openModal() {
+    const modal = await this.modalController.create({
+      component: ModalMensajeComponent,
+      cssClass: 'modal-personalizado',
+    });
+
+    return await modal.present();
+  }
+
   getDateService() {
     let errorMessage: string;
     const token = localStorage.getItem('token');
@@ -56,4 +65,6 @@ export class ServicioEnCursoPage implements OnInit {
       }
     );
   }
+
+  sendDataService() {}
 }

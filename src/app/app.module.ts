@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-import { FormsModule ,ReactiveFormsModule} from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
@@ -15,16 +15,25 @@ import { ClienteWAService } from './servicios/login-registro/login-registro.serv
 import { HttpClientModule } from '@angular/common/http';
 import { ModalMensajeComponent } from 'src/app/modal-mensaje/modal-mensaje.component';
 
-
-
-
 @NgModule({
-  declarations: [AppComponent,ModalMensajeComponent],
+  declarations: [AppComponent, ModalMensajeComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule,ReactiveFormsModule, AngularFireAuthModule, AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebase), HttpClientModule],
-  providers: [BarcodeScanner, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ClienteWAService],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    HttpClientModule,
+  ],
+  providers: [
+    BarcodeScanner,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    ClienteWAService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
