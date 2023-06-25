@@ -65,6 +65,4 @@ export class ServicioEnCursoPage implements OnInit {
       }
     );
   }
-
-  sendDataService() {}
 }
