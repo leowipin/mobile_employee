@@ -1,5 +1,34 @@
+.avatar-empleado{
+    position: relative;
+    z-index:2 ;
+}
+.barramenu .image-container{
+   // display: flex;
+   display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Crear 3 columnas de igual tamaño */
+  gap: 20%; /* Espacio entre las imágenes */
+    width: 100%;
+    position: absolute;
+    background-color: #bf1a24;
+    height: 10%;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+  }
+  .image-container ion-image{
+    width: 100%;/* Ajustar el tamaño de la imagen al 100% del contenedor */
+    object-fit: cover;
+}
+
+  .img-menuinferior {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  
 ion-content {
-    --ion-background-color: #828181;
+   // --ion-background-color: #828181;
     font-family: hp265;
 }
 
@@ -31,7 +60,7 @@ ion-list {
 .back {
     position: fixed;
     z-index: 1;
-    opacity: 0.3;
+    //opacity: 0.3;
     min-width: 80%;
     bottom: 0;
 }

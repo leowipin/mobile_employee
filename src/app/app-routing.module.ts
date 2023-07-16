@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { DataResolverService } from './resolver/data-resolver.service';
-
+import { CommonModule } from '@angular/common';
 const routes: Routes = [
   {
     path: 'home',
@@ -19,6 +19,11 @@ const routes: Routes = [
   {
     path: 'servicioenCurso',
     loadChildren: () => import('./servicio-en-curso/servicio-en-curso-routing.module').then( m => m.ServicioEnCursoPageRoutingModule),
+
+  },
+  {
+    path: 'pruebadesesperada',
+    loadChildren: () => import('./servicio-en-curso/servicio-en-curso.module').then( m => m.ServicioEnCursoPageModule),
 
   },
   {
@@ -121,6 +126,10 @@ const routes: Routes = [
     loadChildren: () => import('./menuprueba/menuprueba.module').then( m => m.MenupruebaPageModule)
   },
 
+  //{
+  //  path: 'menu-servicios',
+  //  loadChildren: () => import('./menu-servicios/menu-servicios.module').then( m => m.MenuServiciosModule)
+ // },
   {
     path: 'homeperfil',
     loadChildren: () => import('./homeperfil/homeperfil.module').then( m => m.HomeperfilPageModule)
@@ -136,9 +145,7 @@ const routes: Routes = [
   {
     path: 'item1-modal',
     loadChildren: () => import('./item1-modal/item1-modal.module').then( m => m.Item1ModalPageModule)
-    
   },
- 
   {
     path: 'calificar-servicio',
     loadChildren: () => import('./calificar-servicio/calificar-servicio.module').then( m => m.CalificarServicioPageModule)
@@ -154,8 +161,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
+    CommonModule,
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

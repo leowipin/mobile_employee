@@ -1,76 +1,107 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" >
+    <ion-menu contentId="main-content">
       <ion-header>
-        <ion-toolbar class="logo" >
+        <ion-toolbar class="logo">
           <div class="imagen">
-            <ion-img  src="assets/img/logosepro.png"></ion-img>
+            <ion-img  src="assets/app sepro vectores-30.png"></ion-img>
           </div>
         </ion-toolbar>
       </ion-header>
-      <ion-content scroll-y=true>
-        <ion-menu-toggle auto-hide="false" text-center>
-          <p align="center"><ion-img menuClose src="assets/img/backcliente.png" (click)="openPage()"></ion-img></p>
-          <p ion-text header-subtitle> {{name}}</p>
-        </ion-menu-toggle>
+          <ion-content scroll-y=true>
+      <ion-menu-toggle auto-hide="false" text-center>
+        <p align="center"><ion-img class="avatar-empleado" menuClose src="assets/img/choferlogonegro.png" (click)="openPage()"></ion-img></p>
         
-        <div class="front">
-          <ion-list class="opciones" lines="none">
-            <ion-menu-toggle auto-hide="false">
+        <p ion-text header-subtitle *ngIf="name.length===1"> {{name}}</p>
+      </ion-menu-toggle>
+      
+      <div class="front">
+        <ion-list class="opciones" lines="none">
+          <ion-menu-toggle auto-hide="false">
 
-              <div class="linea">
-                <ion-img center src="assets/img/lineablanca.png"></ion-img>
-              </div>
-              
-              <ion-item class="opcion" [routerDirection]="'root'" [routerLink]="'/servicioenCurso'">
-                <ion-img menuClose src="assets/img/serviciosicono.png"></ion-img>
-                <ion-label>
-                  Servicios en curso 
-                </ion-label>
-                
-              </ion-item>
-              
-
-              <div class="linea">
-                <ion-img center src="assets/img/lineablanca.png"></ion-img>
-              </div>
-
-              <ion-item class="opcion" [routerDirection]="'root'" [routerLink]="" style="--ion-background-color:rgb(107, 107, 107);">
-                <ion-img menuClose src="assets/img/notificacionesicono.png"></ion-img>
-                <ion-label>
-                  Notificaciones
-                </ion-label>
-                
-              </ion-item>
-
-              
-              <div class="linea">
-                <ion-img center src="assets/img/lineablanca.png"></ion-img>
-              </div>
-
-              <ion-item class="opcion" [routerDirection]="'root'" [routerLink]=""style="--ion-background-color:rgb(107, 107, 107);">
-                <ion-img menuClose src="assets/img/chatsicono.png"></ion-img>
-                <ion-label>
-                  Chats
-                </ion-label>
-              </ion-item>
+            <div class="linea">
+              <ion-img center src="assets/img/lineablanca.png"></ion-img>
+            </div>
             
-            </ion-menu-toggle>
-          </ion-list>
+           <ion-item class="opcion" [routerDirection]="'root'" [routerLink]="'/servicioenCurso'"> 
+         <!--   <ion-item class="opcion" [routerDirection]="'root'" [routerLink]="'/menu-servicios'"> -->
+              <ion-img menuClose src="assets/img/serviciosicono.png"></ion-img>
+              <ion-label>
+                Servicios en curso 
+              </ion-label>
+              
+            </ion-item>
+            
+
+            <div class="linea">
+              <ion-img center src="assets/img/lineablanca.png"></ion-img>
+            </div>
+
+            <ion-item class="opcion" [routerDirection]="'root'" [routerLink]="" style="--ion-background-color:rgb(107, 107, 107);">
+              <ion-img menuClose src="assets/img/notificacionesicono.png"></ion-img>
+              <ion-label>
+                Notificaciones
+              </ion-label>
+              
+            </ion-item>
+
+            
+            <div class="linea">
+              <ion-img center src="assets/img/lineablanca.png"></ion-img>
+            </div>
+
+            <ion-item class="opcion" [routerDirection]="'root'" [routerLink]=""style="--ion-background-color:rgb(107, 107, 107);">
+              <ion-img menuClose src="assets/img/chatsicono.png"></ion-img>
+              <ion-label>
+                Chats
+              </ion-label>
+            </ion-item>
+
+            <div class="linea">
+              <ion-img center src="assets/img/lineablanca.png"></ion-img>
+            </div>
+            <ion-item class="opcion" [routerDirection]="'root'" [routerLink]=""style="--ion-background-color:rgb(107, 107, 107);">
+              <ion-img menuClose src="assets/img/chatsicono.png"></ion-img>
+              <ion-label>
+                Escanear código QR
+              </ion-label>
+            </ion-item>
+
+            <div class="linea">
+              <ion-img center src="assets/img/lineablanca.png"></ion-img>
+            </div>
+            <ion-item class="opcion" [routerDirection]="'root'" [routerLink]=""style="--ion-background-color:rgb(107, 107, 107);">
+              <ion-img menuClose src="assets/img/chatsicono.png"></ion-img>
+              <ion-label>
+                Comentarios y Sugerencias
+              </ion-label>
+            </ion-item>
+
+          </ion-menu-toggle>
+        </ion-list>
+        
+        <div class="cerrarsesion">
+          <ion-item lines="none">
+            <ion-img src="assets/img/cerrarsesion.png"></ion-img>
+            <button (click)="signOut()" ion-button>CERRAR SESION</button>
+          </ion-item>  
           
-          <div class="cerrarsesion">
-            <ion-item lines="none">
-              <ion-img src="assets/img/cerrarsesion.png"></ion-img>
-              <button (click)="signOut()" ion-button>CERRAR SESION</button>
-            </ion-item>  
-            
-          </div>
         </div>
-        <div class="back">
-          <ion-img  src="../../assets/img/appseprovectores-01.png"></ion-img>
-        </div>
-      </ion-content>
-    </ion-menu> 
+      </div>
+      <div class="back">
+        <ion-img  src="../../assets/fondorojo.png"></ion-img>
+      </div>
+    </ion-content>
+    </ion-menu>
+
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>
+  <!--<div class="barramenu">
+    <span class="image-container" >
+      <ion-img style="width: 60%;" src="../../assets/img/guardialogoblanco.png"></ion-img>
+      <ion-img style="width: 60%; " src="../../assets/img/icon-home.png"></ion-img>
+      <ion-img style="width: 60%; " src="../../assets/img/icon-notificar.png"></ion-img>
+    </span>
+  </div>
+-->
 </ion-app>

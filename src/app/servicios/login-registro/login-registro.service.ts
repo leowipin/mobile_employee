@@ -6,18 +6,19 @@ import { SignIn } from "src/app/interfaces/employee/signin";
 import { SignInResponse } from "src/app/interfaces/response/signin";
 import { Name } from "src/app/interfaces/employee/name";
 import { DateService } from "src/app/interfaces/employee/dateservice";
+import { Servicio } from "src/app/interfaces/employee/servicio";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClienteWAService {
   /*Url del servidor */
-  DJANGO_DOMAIN_NAME:string = 'https://seproamerica2022.pythonanywhere.com/';
+  DJANGO_DOMAIN_NAME: string = 'https://seproamerica2022.pythonanywhere.com/';
 
   constructor(private http: HttpClient) { }
 
-  signin(data: SignIn): Observable<SignInResponse>{
-    const endpoint:string = this.DJANGO_DOMAIN_NAME+'users/phoneAccountSignin/';
+  signin(data: SignIn): Observable<SignInResponse> {
+    const endpoint: string = this.DJANGO_DOMAIN_NAME + 'users/phoneAccountSignin/';
     return this.http.post<SignInResponse>(endpoint, data).pipe(
       tap(response => {
         localStorage.setItem('token', response.token);
@@ -25,14 +26,21 @@ export class ClienteWAService {
     );
   }
 
-  getNames(token:string): Observable<Name>{
-    const endpoint:string = this.DJANGO_DOMAIN_NAME+'users/phoneName/';
+  getNames(token: string): Observable<Name> {
+    const endpoint: string = this.DJANGO_DOMAIN_NAME + 'users/phoneName/';
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
-    return this.http.get<Name>(endpoint, { headers: headers })
+    return this.http.get<Name>(endpoint, { headers });
   }
-  getDateService(token: string): Observable<DateService>{
-    const endpoint: string = this.DJANGO_DOMAIN_NAME+'services/phoneAccountOrder/';
+  getDateService(token: string): Observable<DateService> {
+    const endpoint: string = this.DJANGO_DOMAIN_NAME + 'services/phoneAccountOrder/';
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
-    return this.http.get<DateService>(endpoint, { headers: headers })
+    return this.http.get<DateService>(endpoint, { headers });
+  }
+
+  getServiciosTodos(token: string): Observable<Servicio[]> {
+    const endpoint: string = this.DJANGO_DOMAIN_NAME + 'services/phoneAccountOrdersList/';
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.get<Servicio[]>(endpoint, { headers });
   }
 }
+

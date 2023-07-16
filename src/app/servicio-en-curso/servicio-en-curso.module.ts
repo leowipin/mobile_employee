@@ -5,15 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ServicioEnCursoPageRoutingModule } from './servicio-en-curso-routing.module';
-
 import { ServicioEnCursoPage } from './servicio-en-curso.page';
 
 @NgModule({
   imports: [
-    CommonModule,
     FormsModule,
     IonicModule,
-    ServicioEnCursoPageRoutingModule
+//    ServicioEnCursoPageRoutingModule,
+    CommonModule,
   ],
   declarations: [ServicioEnCursoPage]
 })

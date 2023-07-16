@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-import { FormsModule ,ReactiveFormsModule} from '@angular/forms'; 
+import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
@@ -14,16 +14,27 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 import { ClienteWAService } from './servicios/login-registro/login-registro.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalMensajeComponent } from 'src/app/modal-mensaje/modal-mensaje.component';
-
-
-
+import { ServicioEnCursoPage } from './servicio-en-curso/servicio-en-curso.page';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [AppComponent,ModalMensajeComponent],
+  declarations: [AppComponent,
+    ModalMensajeComponent,
+    ServicioEnCursoPage],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule,ReactiveFormsModule, AngularFireAuthModule, AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebase), HttpClientModule],
-  providers: [BarcodeScanner, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ClienteWAService],
+  imports: [BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    HttpClientModule,
+    CommonModule],
+  providers: [BarcodeScanner,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    ClienteWAService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

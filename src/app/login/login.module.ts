@@ -9,8 +9,6 @@ import { LoginPageRoutingModule } from './login-routing.module';
 import { LoginPage } from './login.page';
 import { HttpClientModule } from '@angular/common/http';
 import { ClienteWAService } from '../servicios/login-registro/login-registro.service';
-
-
 @NgModule({
   imports: [
     CommonModule,
@@ -18,7 +16,7 @@ import { ClienteWAService } from '../servicios/login-registro/login-registro.ser
     IonicModule,
     LoginPageRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   declarations: [LoginPage],
   providers:[ ClienteWAService ]

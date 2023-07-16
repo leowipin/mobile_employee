@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { PinLoginPageRoutingModule } from './pin-login-routing.module';
-
 import { PinLoginPage } from './pin-login.page';
 
 @NgModule({
@@ -14,7 +13,7 @@ import { PinLoginPage } from './pin-login.page';
     FormsModule,
     IonicModule,
     PinLoginPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   declarations: [PinLoginPage]
 })

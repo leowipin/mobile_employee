@@ -1,6 +1,82 @@
+.barramenu .image-container{
+    // display: flex;
+    display: grid;
+   grid-template-columns: repeat(3, 1fr); /* Crear 3 columnas de igual tamaño */
+   gap: 20%; /* Espacio entre las imágenes */
+     width: 100%;
+     position: absolute;
+     background-color: #bf1a24;
+     height: 10%;
+     bottom: 0;
+     left: 0;
+     z-index: 3;
+   }
+   .image-container ion-image{
+     width: 100%;/* Ajustar el tamaño de la imagen al 100% del contenedor */
+     object-fit: cover;
+ }
+ 
+  
+.buttoncard {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    font-weight: bolder;
+  }
+
+.cardservicio{
+    background-color: white;
+}
+
+.cardtool-title{
+    background-color: white;
+}
+
+.cardtool ion-text.ion-text-start {
+    display: flex;
+  //  justify-content: flex-start;
+    justify-content: center;
+    font-weight: bolder;
+   
+  }
+
+.cardtool ion-text.ion-text-end {
+    display: flex;
+    justify-content: center; 
+   // justify-content: flex-end;
+    font-weight: bolder;
+  }
+
+ .precio-text {
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    color: #bf1a24;
+    margin-top: 5px;
+    
+   
+}
+
+.card-content .verdetalles {
+    display: flex;
+    justify-content: flex-end;
+    color:#3887bd;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
 ion-content {
-    --ion-background-color: #ffffff;
+    --ion-background-color:#d1d4d6;
     font-family: hp556;
+}
+
+.img-flecha{
+    padding: 2px;
+    width: 60px;
 }
 
 .front {
@@ -10,17 +86,35 @@ ion-content {
     width: 100%;
 }
 
+hr {
+    height: 5px;
+    width: 100%;
+    background-color: #f80f00;
+    color: #f80f00;
+  }
+
+  ion-card-title{
+    display: flex;
+    justify-content: center;
+  }
+
 .back {
-    position: absolute;
-    text-align: buttom;
+   // position: absolute;
+   // text-align: buttom;
+   // z-index: 1;
+   // bottom: 0;
+    position: fixed;
     z-index: 1;
+    opacity: 0.3;
+    min-width: 80%;
     bottom: 0;
+
 }
 
 .titulo {
     text-align: center;
     //position:relative;
-    margin-top: 20%;
+    //margin-top: 20%;
 }
 
 .title {
@@ -80,11 +174,16 @@ ion-content {
 
 .logo {
     display: block;
-    margin: auto;
-    width: 40%;
-    height: 40%;
-    left: 50%;
-    right: 20%;
+    margin-left: 20px;
+    margin-top: 20%;
+//    width: 40%;
+//    height: 40%;
+//    left: 50%;
+//    right: 20%;
+    ion-img{
+        width: 40px; 
+        height: 40px;
+    }
 }
 
 ion-menu-button {
@@ -101,7 +200,7 @@ ion-menu-button {
 .tope span {
     width: 100%;
     position: absolute;
-    background-color: #aaafb4;
+    background-color: #bf1a24;
     height: 26px;
     top: 62px;
     z-index: 1;
@@ -112,6 +211,7 @@ ion-menu-button {
     top: 18px;
     left: auto;
     z-index: 2;
+
 }
 
 div.logosepro {

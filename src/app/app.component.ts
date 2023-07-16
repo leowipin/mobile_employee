@@ -5,7 +5,6 @@ import { saveConfig } from '@ionic/core';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx'
 import { ClienteWAService } from './servicios/login-registro/login-registro.service';
 import { UserDataService } from './servicios/login-registro/userDataService';
-
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -15,7 +14,12 @@ export class AppComponent {
   recibido: any;
   name: string;
 
-  constructor(private route: ActivatedRoute, private navCtrl: NavController, private barcodeScanner: BarcodeScanner, private clienteWAService: ClienteWAService, private userDataService: UserDataService) {
+  constructor(private route: ActivatedRoute,
+    private navCtrl: NavController,
+    private barcodeScanner: BarcodeScanner,
+    private clienteWAService: ClienteWAService,
+    private userDataService: UserDataService,
+    ) {
     this.userDataService.name$.subscribe(name => {
       this.name = name;
     });
@@ -33,7 +37,7 @@ export class AppComponent {
     if (token) {
       this.navCtrl.navigateRoot('/servicioenCurso');
     } else{
-      this.navCtrl.navigateRoot('/login')
+      this.navCtrl.navigateRoot('/login');
     }
     // Actualizar detalles del usuario en el menú de hamburguesas
     this.actualizarUsuario();
