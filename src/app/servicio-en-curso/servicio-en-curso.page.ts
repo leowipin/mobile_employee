@@ -40,6 +40,9 @@ export class ServicioEnCursoPage implements OnInit {
     const modal = await this.modalController.create({
       component: ModalMensajeComponent,
       cssClass: 'modal-personalizado',
+      componentProps: {
+        serviceId: this.datosServicio.id, // ID del servicio
+      },
     });
 
     return await modal.present();

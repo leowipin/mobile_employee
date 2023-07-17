@@ -1,11 +1,20 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, OnInit, Input, Renderer2, ElementRef, ViewChild, Inject } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Renderer2,
+  ElementRef,
+  ViewChild,
+  Inject,
+} from '@angular/core';
 import { UbicacionService } from 'src/app/ubicacion/ubicacion.service';
 import { AlertController, ModalController } from '@ionic/angular';
 import { NgZone } from '@angular/core';
 
 import { Geolocation } from '@capacitor/geolocation';
 
+// eslint-disable-next-line no-var
 declare var google: any;
 
 // La diferencia entre fulltrack y track-servicio es que
@@ -19,10 +28,9 @@ declare var google: any;
   styleUrls: ['./fulltrack.component.scss'],
 })
 export class FulltrackComponent implements OnInit {
-
-  origen : { lat: 0, lng: 0 };
+  origen: { lat: 0; lng: 0 };
   destino = { lat: 0, lng: 0 };
- 
+
   map: any;
   marker: any;
   infowindow: any;
@@ -30,34 +38,38 @@ export class FulltrackComponent implements OnInit {
   directionsService = new google.maps.DirectionsService();
   directionsDisplay = new google.maps.DirectionsRenderer();
 
-
   @ViewChild('map') divMap: ElementRef;
 
-  constructor(private renderer: Renderer2,
+  constructor(
+    private renderer: Renderer2,
     @Inject(DOCUMENT) private document,
     private ubicacionService: UbicacionService,
     public modalController: ModalController,
-    public zone: NgZone, private alertController: AlertController) {
-  }
+    public zone: NgZone,
+    private alertController: AlertController
+  ) {}
 
   ngOnInit(): void {
     this.init();
   }
 
-
   async init() {
-    this.ubicacionService.init(this.renderer, this.document).then(() => {
-      this.initMap();
-    }).catch((err) => {
-      console.log(err); })
+    this.ubicacionService
+      .init(this.renderer, this.document)
+      .then(() => {
+        this.initMap();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   initMap() {
     const position = this.origen;
 
-    let latLng = new google.maps.LatLng(position.lat, position.lng);
+    const latLng = new google.maps.LatLng(position.lat, position.lng);
 
-    let mapOptions = {
+    const mapOptions = {
       center: latLng,
       zoom: 20,
       disableDefaultUI: true,
@@ -79,21 +91,23 @@ export class FulltrackComponent implements OnInit {
   }
 
   public calculateRoute() {
-    this.directionsService.route({
-      origin: this.origen,
-      destination: this.destino,
-      travelMode: google.maps.TravelMode.DRIVING,
-    }, (response, status) => {
-      if (status === google.maps.DirectionsStatus.OK) {
-        this.directionsDisplay.setDirections(response);
-      } else {
-        alert("No se pudo calcular la ruta: " + status);
+    this.directionsService.route(
+      {
+        origin: this.origen,
+        destination: this.destino,
+        travelMode: google.maps.TravelMode.DRIVING,
+      },
+      (response, status) => {
+        if (status === google.maps.DirectionsStatus.OK) {
+          this.directionsDisplay.setDirections(response);
+        } else {
+          alert('No se pudo calcular la ruta: ' + status);
+        }
       }
-    });
+    );
   }
 
   clickHandleEvent() {
-
     this.map.addListener('click', (event: any) => {
       const position = {
         lat: event.latLng.lat(),
@@ -101,57 +115,49 @@ export class FulltrackComponent implements OnInit {
       };
       this.addMarker(position);
     });
-
   }
 
   addMarker(position: any): void {
-
-    let latLng = new google.maps.LatLng(position.lat, position.lng);
+    const latLng = new google.maps.LatLng(position.lat, position.lng);
 
     this.marker.setPosition(latLng);
     this.map.panTo(position);
     this.positionSet = position;
-
   }
 
-
   setInfoWindow(marker: any, titulo: string, subtitulo: string) {
-
-    const contentString = '<div id="contentInsideMap">' +
+    const contentString =
+      '<div id="contentInsideMap">' +
       '<div>' +
       '</div>' +
-      '<p style="font-weight: bold; margin-bottom: 5px;">' + titulo + '</p>' +
+      '<p style="font-weight: bold; margin-bottom: 5px;">' +
+      titulo +
+      '</p>' +
       '<div id="bodyContent">' +
-      '<p class"normal m-0">'
-      + subtitulo + '</p>' +
+      '<p class"normal m-0">' +
+      subtitulo +
+      '</p>' +
       '</div>' +
       '</div>';
     this.infowindow.setContent(contentString);
     this.infowindow.open(this.map, marker);
-
   }
 
   async mylocation() {
-
-    console.log('mylocation() click')
+    console.log('mylocation() click');
 
     Geolocation.getCurrentPosition().then((res) => {
-
       console.log('mylocation() -> get ', res);
 
       const position = {
         lat: res.coords.latitude,
         lng: res.coords.longitude,
-      }
+      };
       this.addMarker(position);
-
     });
-
   }
 
-  aceptar() {  
-    this.modalController.dismiss({ pos: this.positionSet })
+  aceptar() {
+    this.modalController.dismiss({ pos: this.positionSet });
   }
-
-
 }

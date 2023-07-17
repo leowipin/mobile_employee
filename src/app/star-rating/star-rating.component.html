@@ -1,0 +1,3 @@
+<div class="star-rating">
+  <div class="star" *ngFor="let star of stars" [ngClass]="{ 'filled': star <= currentRating }"></div>
+</div>
