@@ -34,7 +34,7 @@ div.logosepro {
     margin-top: 6rem;
     display: flex;
     flex-direction: column;
-    ion-img{
+    ion-img {
         width: 80%;
         margin: 0 auto;
     }
@@ -46,29 +46,30 @@ div.logosepro {
     justify-content: center;
     color: #aaafb4;
 }
-.comentarios{
+
+.comentarios {
     padding-top: 6%;
     display: flex;
     justify-content: center;
-    
-
 }
-.comentarios textarea{
+
+.comentarios textarea {
     width: 15em;
     height: 7em;
     font-family: "hp265";
-    padding:2%;
+    padding: 2%;
 }
-ion-label{
+
+ion-label {
     font-family: "BebasBold";
     font-size: 1.6em;
     margin: 0 auto;
-    p{
+    p {
         font-size: 0.8em;
     }
 }
 
-ion-button{
+ion-button {
     max-width: 30%;
     margin: 0 auto;
     margin-top: 2em;

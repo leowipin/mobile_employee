@@ -1,28 +1,32 @@
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { SignIn } from "src/app/interfaces/employee/signin";
-import { SignInResponse } from "src/app/interfaces/response/signin";
-import { Name } from "src/app/interfaces/employee/name";
-import { DateService } from "src/app/interfaces/employee/dateservice";
-import { Servicio } from "src/app/interfaces/employee/servicio";
+import { DateService } from 'src/app/interfaces/employee/dateservice';
+import { Name } from 'src/app/interfaces/employee/name';
+import { Servicio } from 'src/app/interfaces/employee/servicio';
+import { SignIn } from 'src/app/interfaces/employee/signin';
+import { SignInResponse } from 'src/app/interfaces/response/signin';
+
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ClienteWAService {
   /*Url del servidor */
-  DJANGO_DOMAIN_NAME: string = 'https://seproamerica2022.pythonanywhere.com/';
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  static DJANGO_DOMAIN_NAME: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  DJANGO_DOMAIN_NAME = 'https://seproamerica2022.pythonanywhere.com/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   signin(data: SignIn): Observable<SignInResponse> {
     const endpoint: string = this.DJANGO_DOMAIN_NAME + 'users/phoneAccountSignin/';
     return this.http.post<SignInResponse>(endpoint, data).pipe(
-      tap(response => {
+      tap((response) => {
         localStorage.setItem('token', response.token);
-      }),
+      })
     );
   }
 

@@ -47,6 +47,19 @@ export class ServicioEnCursoPage implements OnInit {
     this.getDateService();
     this.presentingElement = document.querySelector('.ion-page');
   }
+<<<<<<< HEAD
+=======
+
+  async openModal() {
+    const modal = await this.modalController.create({
+      component: ModalMensajeComponent,
+      cssClass: 'modal-personalizado',
+    });
+
+    return await modal.present();
+  }
+
+>>>>>>> d2ee974b36bb50c2eab8bb3faeae0bcac73f8d6e
   getDateService() {
     let errorMessage: string;
     const token = localStorage.getItem('token');
