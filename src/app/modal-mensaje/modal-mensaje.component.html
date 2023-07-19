@@ -112,11 +112,11 @@
     </ion-row>
   </ion-grid>
 </ion-content>-->
-<!--<ion-header>
+<ion-header>
     <ion-toolbar>
         <ion-buttons slot="end">
             <ion-button (click)="cerrar()">
-                <ion-icon slot="icon-only" name="close"></ion-icon>
+                <ion-img src="assets/img/icon-close.png" alt="Cerrar"></ion-img>
             </ion-button>
         </ion-buttons>
     </ion-toolbar>
@@ -149,11 +149,11 @@
     </div>
 </ion-content>
 
-<ion-header>
+<!--<ion-header>
     <ion-toolbar>
         <ion-buttons slot="end">
             <ion-button (click)="closeModal()">
-                <ion-icon slot="icon-only" name="close"></ion-icon>
+                <ion-img src="assets/img/icon-close.png" alt="Cerrar"></ion-img>
             </ion-button>
         </ion-buttons>
     </ion-toolbar>
@@ -170,20 +170,23 @@
             <ion-button shape="round" color="danger" (click)="cerrar()">CANCELAR</ion-button>
         </div>
     </div>
-</ion-content>-->
+</ion-content>
 
 <ion-header>
     <ion-toolbar>
-        <ion-title>¿Abortar Servicio?</ion-title>
+        <ion-title></ion-title>
         <ion-buttons slot="end">
             <ion-button (click)="cerrar()">
-                <ion-icon name="close"></ion-icon>
+                <ion-img src="assets/img/icon-close.png" alt="Cerrar"></ion-img>
             </ion-button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <div class="titulo">
+        ¿Abortar Servicio?
+    </div>
     <ion-list>
         <div class="modal-container">
             <ion-radio-group [(ngModel)]="selectedReason">
@@ -191,31 +194,31 @@
                     <ion-label>Motivos para abortar:</ion-label>
                 </ion-list-header>
                 <ion-item>
-                    <ion-radio mode="md" value="No lo encontré"></ion-radio>
-                    <ion-label>No lo encontré</ion-label>
+                    <ion-radio mode="md" value="NO LO ENCONTRÉ" color="danger"></ion-radio>
+                    <ion-label>NO LO ENCONTRÉ</ion-label>
                 </ion-item>
                 <ion-item>
-                    <ion-radio mode="md" value="No quiero el servicio"></ion-radio>
-                    <ion-label>No quiero el servicio</ion-label>
+                    <ion-radio mode="md" value="NO QUIERO EL SERVICIO" color="danger"></ion-radio>
+                    <ion-label>NO QUIERO EL SERVICIO</ion-label>
                 </ion-item>
                 <ion-item>
-                    <ion-radio mode="md" value="No tengo dinero"></ion-radio>
-                    <ion-label>No tengo dinero</ion-label>
+                    <ion-radio mode="md" value="NO TENGO DINERO" color="danger"></ion-radio>
+                    <ion-label>NO TENGO DINERO</ion-label>
                 </ion-item>
                 <ion-item>
-                    <ion-radio mode="md" value="Otros"></ion-radio>
-                    <ion-label>Otros</ion-label>
+                    <ion-radio mode="md" value="OTROS" color="danger"></ion-radio>
+                    <ion-label>OTROS</ion-label>
                 </ion-item>
             </ion-radio-group>
         </div>
 
         <ion-item>
-            <ion-label position="floating">Mensaje (opcional)</ion-label>
+            <ion-label position="floating" color="danger">Mensaje (opcional)</ion-label>
             <ion-textarea rows="4" [(ngModel)]="message" class="mi-textarea-personalizado"></ion-textarea>
         </ion-item>
     </ion-list>
     <div class="buttons">
         <ion-button shape="round" color="success" (click)="confirm()">ACEPTAR</ion-button>
-        <ion-button shape="round" color="danger" (click)="cancel()">CANCELAR</ion-button>
+        <ion-button shape="round" (click)="cancel()">CANCELAR</ion-button>
     </div>
 </ion-content>

@@ -110,10 +110,16 @@ export class ModalMensajeComponent {
     if (this.rating >= 0 && this.rating < 1) {
       this.starCount = 0;
       this.rating = 0;
+    } else if (this.rating >= 1 && this.rating < 2) {
+      this.starCount = 1;
+    } else if (this.rating >= 2 && this.rating < 3) {
+      this.starCount = 2;
+    } else if (this.rating >= 3 && this.rating < 4) {
+      this.starCount = 3;
     } else if (this.rating >= 4 && this.rating < 5) {
       this.starCount = 4;
     } else {
-      this.starCount = this.rating; // Redondea el valor del slider al número entero más cercano
+      this.starCount = this.rating;
     }
     const starArray = Array(5).fill(false);
     console.log(this.starCount); // Crea un arreglo de 5 elementos, inicializados en falso

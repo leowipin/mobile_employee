@@ -133,3 +133,20 @@ ion-textarea {
     border-radius: 5px;
     /* Agrega más estilos según tus necesidades */
 }
+
+ion-radio {
+    --border-radius: 4px;
+    --inner-border-radius: 4px;
+    --color: #ddd;
+    --color-checked: #6815ec;
+}
+
+.titulo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    size: 18px;
+    font-weight: bold;
+    color: black;
+}
