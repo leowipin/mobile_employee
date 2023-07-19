@@ -14,15 +14,6 @@ export class AppComponent {
   recibido: any;
   name: string;
 
-<<<<<<< HEAD
-  constructor(private route: ActivatedRoute,
-    private navCtrl: NavController,
-    private barcodeScanner: BarcodeScanner,
-    private clienteWAService: ClienteWAService,
-    private userDataService: UserDataService,
-    ) {
-    this.userDataService.name$.subscribe(name => {
-=======
   constructor(
     private route: ActivatedRoute,
     private navCtrl: NavController,
@@ -31,7 +22,6 @@ export class AppComponent {
     private userDataService: UserDataService
   ) {
     this.userDataService.name$.subscribe((name) => {
->>>>>>> d2ee974b36bb50c2eab8bb3faeae0bcac73f8d6e
       this.name = name;
     });
   }
@@ -47,11 +37,7 @@ export class AppComponent {
     const token = localStorage.getItem('token');
     if (token) {
       this.navCtrl.navigateRoot('/servicioenCurso');
-<<<<<<< HEAD
-    } else{
-=======
     } else {
->>>>>>> d2ee974b36bb50c2eab8bb3faeae0bcac73f8d6e
       this.navCtrl.navigateRoot('/login');
     }
     // Actualizar detalles del usuario en el menú de hamburguesas

@@ -78,99 +78,97 @@
     <ion-img style="width: 10; height: 10;" src="../../assets/img/aguilarojafondo.png"></ion-img>
   </div>
 
-<<<<<<< HEAD
 </ion-content>
 -->
 
 <div class="ion-page">
-  <div class="front">
-    <div>
-      <ion-buttons slot="start">
-        <ion-menu-button>
-          <ion-img style="width: 50px; height: 50px;" src="assets/menuhamburguesarojo.png"></ion-img>
-        </ion-menu-button>
-      </ion-buttons>
-      <div class="tope">
-        <span>
+    <div class="front">
+        <div>
+            <ion-buttons slot="start">
+                <ion-menu-button>
+                    <ion-img style="width: 50px; height: 50px;" src="assets/menuhamburguesarojo.png"></ion-img>
+                </ion-menu-button>
+            </ion-buttons>
+            <div class="tope">
+                <span>
         </span>
-        <div class="logosepro">
-          <ion-img style="width: 220px; height: 120px;" src="assets/img/logosepro.png"></ion-img>
-        </div>
-      </div>
-    </div>
-    <div class="logo">
-      <ion-img  src="assets/img/flecha-retro.png"></ion-img>
-    </div>
-    <div class="titulo">
-
-      <h1>SOLICITUDES</h1>
-    </div>
-
-    <ion-content class="ion-padding" scroll-y=true>
-
-      <ion-card class="cardservicio">
-         <ion-card-header class="cardheader">
-          <ion-toolbar class="cardtool">
-          
-              <ion-text class="ion-text-start " >20:00</ion-text>
-              <ion-text class="ion-text-end">22:00</ion-text>
-           
-          </ion-toolbar>
-
-          <ion-card-title>CUSTODIA</ion-card-title>
-           <hr>
-        </ion-card-header>
-          <ion-card-content class="card-content">
-            <ion-title class="precio-text">Precio: $150</ion-title>
-            <ion-button class="buttoncard" color="success" >Aceptar</ion-button>
-            <div>
-              <ion-text class="verdetalles" id="open-modal">VER DETALLES</ion-text>
+                <div class="logosepro">
+                    <ion-img style="width: 220px; height: 120px;" src="assets/img/logosepro.png"></ion-img>
+                </div>
             </div>
-          </ion-card-content>
-    
-      </ion-card>
-<!--
+        </div>
+        <div class="logo">
+            <ion-img src="assets/img/flecha-retro.png"></ion-img>
+        </div>
+        <div class="titulo">
+
+            <h1>SOLICITUDES</h1>
+        </div>
+
+        <ion-content class="ion-padding" scroll-y=true>
+
+            <ion-card class="cardservicio">
+                <ion-card-header class="cardheader">
+                    <ion-toolbar class="cardtool">
+
+                        <ion-text class="ion-text-start ">20:00</ion-text>
+                        <ion-text class="ion-text-end">22:00</ion-text>
+
+                    </ion-toolbar>
+
+                    <ion-card-title>CUSTODIA</ion-card-title>
+                    <hr>
+                </ion-card-header>
+                <ion-card-content class="card-content">
+                    <ion-title class="precio-text">Precio: $150</ion-title>
+                    <ion-button class="buttoncard" color="success">Aceptar</ion-button>
+                    <div>
+                        <ion-text class="verdetalles" id="open-modal">VER DETALLES</ion-text>
+                    </div>
+                </ion-card-content>
+
+            </ion-card>
+            <!--
       <ion-button id="open-modal" expand="block">Guardia</ion-button>
       <ion-button id="open-modal2" expand="block">Conductor Asignado</ion-button>
       <ion-button id="open-modal3" expand="block">Transporte</ion-button>
       <ion-button id="open-modal4" expand="block">Custodio</ion-button>
       <ion-button id="open-modal5" expand="block">Todos los servicios</ion-button>
     -->
-      <ion-modal #modal trigger="open-modal5" [canDismiss]="canDismiss" [presentingElement]="presentingElement">
-        <div class="datos5">
-          <ion-button expand="block" [canDismiss]="canDismiss"
-            [presentingElement]="presentingElement">INICIAR</ion-button>
-          <ion-label class="text-center"> DATOS GENERALES DE SERVICIO</ion-label>
-          <ion-list >
-            <ion-label class="fijo">Nombre Cliente</ion-label>
-            <ion-item *ngFor="let servicio of serviciosTodos">
-              <ion-label class="ion-text-wrap" *ngIf="servicio && servicio.client_first_names">
-                {{ servicio.client_first_names }} {{ servicio.client_last_name }}
-              </ion-label>
-            </ion-item>
-            
-          </ion-list>
-          <div *ngIf="errorMessage">
-            <p>{{ errorMessage }}</p>
-          </div>
-        </div>
-  
-      </ion-modal>
-      
-      <div class="back">
-        <ion-img  src="../../assets/img/appseprovectores-01.png"></ion-img>
-      </div>
+            <ion-modal #modal trigger="open-modal5" [canDismiss]="canDismiss" [presentingElement]="presentingElement">
+                <div class="datos5">
+                    <ion-button expand="block" [canDismiss]="canDismiss" [presentingElement]="presentingElement">INICIAR</ion-button>
+                    <ion-label class="text-center"> DATOS GENERALES DE SERVICIO</ion-label>
+                    <ion-list>
+                        <ion-label class="fijo">Nombre Cliente</ion-label>
+                        <ion-item *ngFor="let servicio of serviciosTodos">
+                            <ion-label class="ion-text-wrap" *ngIf="servicio && servicio.client_first_names">
+                                {{ servicio.client_first_names }} {{ servicio.client_last_name }}
+                            </ion-label>
+                        </ion-item>
 
-      <div class="barramenu">
-        <span class="image-container" >
+                    </ion-list>
+                    <div *ngIf="errorMessage">
+                        <p>{{ errorMessage }}</p>
+                    </div>
+                </div>
+
+            </ion-modal>
+
+            <div class="back">
+                <ion-img src="../../assets/img/appseprovectores-01.png"></ion-img>
+            </div>
+
+            <div class="barramenu">
+                <span class="image-container">
           <ion-img style="width: 60%;" src="../../assets/img/guardialogoblanco.png"></ion-img>
           <ion-img style="width: 60%; " src="../../assets/img/icon-home.png"></ion-img>
           <ion-img style="width: 60%; " src="../../assets/img/icon-notificar.png"></ion-img>
         </span>
-      </div>
-    </ion-content>
+            </div>
+        </ion-content>
 
-   <!-- <ion-modal #modal trigger="open-modal" [canDismiss]="canDismiss" [presentingElement]="presentingElement">
+        <!-- <ion-modal #modal trigger="open-modal" [canDismiss]="canDismiss" [presentingElement]="presentingElement">
       <div class="datos2">
         <ion-button expand="block" [canDismiss]="canDismiss"
           [presentingElement]="presentingElement">INICIAR</ion-button>
@@ -216,10 +214,8 @@
         </div>
       </div>
     </ion-modal>-->
-  
-    
 
-  </div>
-=======
-</ion-content>
->>>>>>> d2ee974b36bb50c2eab8bb3faeae0bcac73f8d6e
+
+
+    </div>
+    </ion-content>
