@@ -6,8 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ServicioEnCursoPageRoutingModule } from './servicio-en-curso-routing.module';
 import { ServicioEnCursoPage } from './servicio-en-curso.page';
-import { DetallesPage } from './componentes/detalles.page';
-import { DetallesservicioPage } from '../detallesservicio/detallesservicio.page';
+
 
 @NgModule({
   imports: [
@@ -16,6 +15,6 @@ import { DetallesservicioPage } from '../detallesservicio/detallesservicio.page'
 //    ServicioEnCursoPageRoutingModule,
     CommonModule,
   ],
-  declarations: [ServicioEnCursoPage, DetallesPage, DetallesservicioPage ]
+  declarations: [ServicioEnCursoPage ]
 })
 export class ServicioEnCursoPageModule {}

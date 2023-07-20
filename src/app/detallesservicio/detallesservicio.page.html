@@ -1,78 +1,131 @@
-<ion-header>
+<div class="ion-page">
 
-</ion-header>
 
-<ion-content>
-  <div class="tope">
-    <span> 
-    </span>
-    <div class="logosepro">
-      <ion-img style="width: 150px; height: 150px;" src="assets/img/logosepro.png"></ion-img>
+  <ion-header>
+    <div>
+      <ion-buttons slot="start">
+        <ion-menu-button>
+          <ion-img style="width: 50px; height: 50px;" src="assets/menuhamburguesarojo.png"></ion-img>
+        </ion-menu-button>
+      </ion-buttons>
+      <div class="tope">
+        <span>
+        </span>
+        <div class="logosepro">
+          <ion-img style="width: 180px; height: 150spx;" src="assets/img/logosepro.png"></ion-img>
+        </div>
+      </div>
     </div>
-  </div>
+      <div class="retro">
+        <ion-img onclick="serviciosencurso()" src="assets/img/flecha-retro.png"></ion-img>
+      </div>
+    
+  </ion-header>
 
-	<div class="datos2">
-    <ion-list>
-      <ion-chip outline color="dark">
-           Detalles del servicio
-      </ion-chip>
-    </ion-list>
-    <span class="circle-grey">
-      <div class="logo">
-        <ion-img  src="assets/img/perfilcliente.png"></ion-img>
-      </div>
-    </span>
-    <div class="iconos">
-      <ion-icon size ="large" name="chatbubble-ellipses"></ion-icon>
-      <ion-icon size ="large" name="call"></ion-icon>     
-     
-    </div>
 
-    <div class="detalles">
-      <div class="servicio">
-        <label class="fijo">Servicio: </label>
-      <label class="variable"></label>
-      </div>
-      <div class="lugar">
-        <label class="fijo">Lugar: </label>
-      <label class="variable"></label>
-      </div>
+  <ion-content>
+   
 
-      <div class="finicio">
-        <label class="fijo">Fecha: </label>
-      <label class="variable"></label>
-      </div>
+    <div class="datos2">
+      <ion-list>
+        <ion-chip outline color="dark">
+            Detalles del servicio
+        </ion-chip>
+      </ion-list>
+      <span class="circle-grey">
+        <div class="fotoperfil">
+          <ion-img src="assets/img/marco con foto.png"></ion-img>
+        </div>
+      </span>
+
+
+   <div class="iconos">
+        <ion-icon size ="large" name="chatbubble-ellipses"></ion-icon>
+        <ion-icon size ="large" name="call"></ion-icon>     
       
-      <div class="hinicio">
-        <label class="fijo">Hora: </label>
-      <label class="variable"></label>
       </div>
+ 
+      <div class="detalles">
+        <div class="nombre-guardia">
+          <label class="fijo">Nombre: </label>
+        <label class="variable"></label>
+        </div>
+        <div class="servicio">
+          <label class="fijo">Servicio: </label>
+        <label class="variable"></label>
+        </div>
+        <div class="lugar">
+          <label class="fijo">Lugar: </label>
+        <label class="variable"></label>
+        </div>
 
-      <div class="ffin">
-        <label class="fijo">Fecha fin: </label>
-      <label class="variable"></label>
-      </div>
-      <div class="monto">
-        <label class="fijo">Monto: </label>
-      <label class="variable"></label>
-      </div>
+        <div class="finicio">
+          <label class="fijo">Fecha: </label>
+        <label class="variable"></label>
+        </div>
+        
+        <div class="hinicio">
+          <label class="fijo">Hora: </label>
+        <label class="variable"></label>
+        </div>
 
-      <div class="metodopago">
-        <label class="fijo">Metodo de pago: </label>
-      <label class="variable"></label>
-      </div>
-      <div class="ruta">
-        <label class="fijo">Ver ruta:</label>
+        <div class="ffin">
+          <label class="fijo">Fecha fin: </label>
+        <label class="variable"></label>
+        </div>
+        <div class="monto">
+          <label class="fijo">Monto: </label>
+        <label class="variable"></label>
+        </div>
+
+        <div class="metodopago">
+          <label class="fijo">Metodo de pago: </label>
+        <label class="variable"></label>
+        </div>
+        <div class="ruta">
+          <label class="fijo">Ver ruta:</label>
+        </div>
+        <div class="map-icon">
+          <ion-img  src="assets/img/sucursalesicono0.png"></ion-img>
+        </div>
+        <div>
+          <ion-button color="success" >INICIAR</ion-button>
+          <ion-button>FINALIZAR</ion-button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="botones">
-    <IonButton color="success">Realizar pago</IonButton>
-    <IonButton color="danger">Cancelar</IonButton>
-  </div>
+    
 
- 
+  
 
 
-</ion-content>
+  </ion-content>
+</div>
+
+
+<!--
+      <div class="detallesguardia">
+      <div>
+        <h1>NOMBRE CELULAR </h1>
+      </div>
+      <hr>
+      <h2>ANCON1</h2>
+
+
+      <div>
+        <div>DATOS DEL SERVICIO</div>
+        <hr>
+        <ion-button color="successful"> Total $100</ion-button>
+        <h2>GUARDIA</h2>
+        <h3>Fecha: 22/11/2023</h3>
+        <h3>Hora: 19:00PM - 21:00PM </h3>
+        <h3>Cliente: Pedro Pérez</h3>
+        <h3>Lugar de Partida: Ceibos</h3>
+        <h3>Accesorios: Pistola</h3>
+        <h3>Ver ubicación</h3>
+
+
+      </div>
+</div>
+-->

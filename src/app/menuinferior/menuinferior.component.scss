@@ -1,0 +1,17 @@
+.barramenu .image-container{
+    // display: flex;
+    display: grid;
+   grid-template-columns: repeat(3, 1fr); /* Crear 3 columnas de igual tamaño */
+   gap: 20%; /* Espacio entre las imágenes */
+     width: 100%;
+     position: absolute;
+     background-color: #bf1a24;
+     height: 10%;
+     bottom: 0;
+     left: 0;
+     z-index: 3;
+   }
+   .image-container ion-image{
+     width: 100%;/* Ajustar el tamaño de la imagen al 100% del contenedor */
+     object-fit: cover;
+ }

@@ -18,7 +18,7 @@ export class PerfilPage implements OnInit {
   celularur: any;
   cedulaur: any;
   direccionur: any;
-  perfil = "assets/img/perfilcliente.png";
+  perfil = "assets/img/marco con foto.png";
 
   constructor(private route: ActivatedRoute, private navCtrl: NavController, public alertController: AlertController){
     

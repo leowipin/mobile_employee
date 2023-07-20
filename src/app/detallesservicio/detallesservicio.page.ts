@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-detallesservicio',
   templateUrl: './detallesservicio.page.html',
@@ -9,7 +10,10 @@ export class DetallesservicioPage implements OnInit {
 
   data: any;
  
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(private route: ActivatedRoute, 
+    private router: Router,
+    private navCtrl: NavController
+    ) {
  
   }
  
@@ -18,5 +22,9 @@ export class DetallesservicioPage implements OnInit {
       this.data = this.route.snapshot.data['special'];
     }
   }
+
+    serviciosencurso(){
+    this.navCtrl.navigateForward("/servicios-en-curso");
+    }
 
 }

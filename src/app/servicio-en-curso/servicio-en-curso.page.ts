@@ -10,7 +10,6 @@ import { ClienteWAService } from '../servicios/login-registro/login-registro.ser
 import { HttpClient } from '@angular/common/http';
 import { ActionSheetController } from '@ionic/angular';
 import { Servicio } from '../interfaces/employee/servicio';
-
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -27,7 +26,6 @@ export class ServicioEnCursoPage implements OnInit {
     lat: 0,
     lng: 0,
   };
-
   datosServicio: any = {};
   serviciosTodos: Servicio[] = [];
   presentingElement = undefined;
@@ -47,8 +45,6 @@ export class ServicioEnCursoPage implements OnInit {
     this.getDateService();
     this.presentingElement = document.querySelector('.ion-page');
   }
-<<<<<<< HEAD
-=======
 
   async openModal() {
     const modal = await this.modalController.create({
@@ -59,7 +55,6 @@ export class ServicioEnCursoPage implements OnInit {
     return await modal.present();
   }
 
->>>>>>> d2ee974b36bb50c2eab8bb3faeae0bcac73f8d6e
   getDateService() {
     let errorMessage: string;
     const token = localStorage.getItem('token');
@@ -122,4 +117,8 @@ export class ServicioEnCursoPage implements OnInit {
 
     return role === 'en curso';
   };
+  
+  numSequence(n: number): Array<number> {
+    return Array(n);
+  }
 }

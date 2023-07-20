@@ -81,6 +81,7 @@ const routes: Routes = [
     loadChildren: () => import('./detallesservicio/detallesservicio.module').then( m => m.DetallesservicioPageModule)
   },
 
+
   {
     path: 'detallesservicio/:id',
     resolve: {

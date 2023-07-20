@@ -25,30 +25,18 @@
             
            <ion-item class="opcion" [routerDirection]="'root'" [routerLink]="'/servicioenCurso'"> 
          <!--   <ion-item class="opcion" [routerDirection]="'root'" [routerLink]="'/menu-servicios'"> -->
-              <ion-img menuClose src="assets/img/serviciosicono.png"></ion-img>
-              <ion-label>
-                Servicios en curso 
-              </ion-label>
-              
-            </ion-item>
-            
-
-            <div class="linea">
-              <ion-img center src="assets/img/lineablanca.png"></ion-img>
-            </div>
-
-            <ion-item class="opcion" [routerDirection]="'root'" [routerLink]="" style="--ion-background-color:rgb(107, 107, 107);">
               <ion-img menuClose src="assets/img/notificacionesicono.png"></ion-img>
               <ion-label>
                 Notificaciones
               </ion-label>
               
             </ion-item>
-
             
+
             <div class="linea">
               <ion-img center src="assets/img/lineablanca.png"></ion-img>
             </div>
+
 
             <ion-item class="opcion" [routerDirection]="'root'" [routerLink]=""style="--ion-background-color:rgb(107, 107, 107);">
               <ion-img menuClose src="assets/img/chatsicono.png"></ion-img>
@@ -57,6 +45,18 @@
               </ion-label>
             </ion-item>
 
+            <div class="linea">
+              <ion-img center src="assets/img/lineablanca.png"></ion-img>
+            </div>
+            
+            <ion-item class="opcion" [routerDirection]="'root'" [routerLink]="'/historialservicios'" style="--ion-background-color:rgb(107, 107, 107);">
+              <ion-img menuClose src="assets/img/notificacionesicono.png"></ion-img>
+              <ion-label>
+                Historial
+              </ion-label>        
+            </ion-item>
+
+            
             <div class="linea">
               <ion-img center src="assets/img/lineablanca.png"></ion-img>
             </div>
@@ -96,12 +96,12 @@
 
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>
-  <!--<div class="barramenu">
+ <div class="barramenu">
     <span class="image-container" >
-      <ion-img style="width: 60%;" src="../../assets/img/guardialogoblanco.png"></ion-img>
+      <ion-img style="width: 60%;" [routerDirection]="'root'" [routerLink]="'/perfil'" src="../../assets/img/guardialogoblanco.png">Perfil</ion-img>
       <ion-img style="width: 60%; " src="../../assets/img/icon-home.png"></ion-img>
-      <ion-img style="width: 60%; " src="../../assets/img/icon-notificar.png"></ion-img>
+      <ion-img style="width: 60%; " [routerDirection]="'root'" [routerLink]="'/servicioenCurso'" src="../../assets/img/icon-notificar.png"></ion-img>
     </span>
   </div>
--->
+
 </ion-app>

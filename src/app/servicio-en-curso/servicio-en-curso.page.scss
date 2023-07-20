@@ -57,7 +57,7 @@
     justify-content: center;
     font-weight: bolder;
     color: #bf1a24;
-    margin-top: 5px;
+    margin-top: 10px;
     
    
 }
@@ -79,8 +79,12 @@
 
 
 ion-content {
-    --ion-background-color:#d1d4d6;
+   // --ion-background-color:rgba(180, 180, 172, 0.621);
     font-family: hp556;
+}
+
+.ion-page{
+   // background-color: rgba(180, 180, 172, 0.621);
 }
 
 .img-flecha{
@@ -93,6 +97,7 @@ ion-content {
     position: absolute;
     height: 100%;
     width: 100%;
+   // background-color: rgba(180, 180, 172, 0.621);
 }
 
 hr {
@@ -198,13 +203,18 @@ hr {
 
 ion-menu-button {
     margin-left: 20px;
-    margin-top: 10px;
+    margin-top: 15px;
     min-width: 50px;
+
     ion-img {
         padding: 2px;
         width: 60px;
         opacity: 0.6;
     }
+}
+
+menu-contenedor{
+   // background-color: rgba(180, 180, 172, 0.621);
 }
 
 .tope span {

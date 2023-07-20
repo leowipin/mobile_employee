@@ -30,26 +30,51 @@
     }
 }
 
-.tope span{
-    width:100%;
-   position:absolute;
-   left:0;
-   background-color:#aaafb4;
-   height:26px;
-   top:80px;
-}
-
-.logosepro ion-img{
-    padding-left: 0px;
-    display:block;
-    position:absolute;
-    margin-left: 100px;
+.front {
+    z-index: 2;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(180, 180, 172, 0.621);
 }
 
 
-.logo{
-    display:block;
-   margin:auto; 
+
+
+.tope span {
+    width: 100%;
+    position: absolute;
+    background-color: #bf1a24;
+    height: 26px;
+    top: 62px;
+    z-index: 1;
+}
+
+.logosepro ion-img {
+    position: absolute;
+    top: 18px;
+    left: auto;
+    z-index: 2;
+
+}
+
+div.logosepro {
+    display: flex;
+    justify-content: center;
+}
+
+.retro {
+    display: block;
+    margin-left: 20px;
+    margin-top: 20%;
+//    width: 40%;
+//    height: 40%;
+//    left: 50%;
+//    right: 20%;
+    ion-img{
+        width: 40px; 
+        height: 40px;
+    }
 }
 
 ion-chip{
@@ -58,6 +83,23 @@ ion-chip{
     align-self: center;
     justify-content: center;
 
+}
+
+ion-menu-button {
+    margin-left: 20px;
+    margin-top: 15px;
+    min-width: 50px;
+
+    ion-img {
+        padding: 2px;
+        width: 60px;
+        opacity: 0.6;
+    }
+}
+
+.map-icon{
+    width: 20%;
+    margin-bottom: 10px;
 }
 
 span.circle-grey {
@@ -82,4 +124,8 @@ span.circle-grey {
 .botones{
     margin-left: 5%;
     display: flex;
+}
+
+.menu-contenedor{
+    position: absolute;
 }

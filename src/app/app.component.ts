@@ -36,11 +36,7 @@ export class AppComponent {
     const token = localStorage.getItem('token');
     if (token) {
       this.navCtrl.navigateRoot('/servicioenCurso');
-<<<<<<< HEAD
-    } else{
-=======
     } else {
->>>>>>> d2ee974b36bb50c2eab8bb3faeae0bcac73f8d6e
       this.navCtrl.navigateRoot('/login');
     }
     // Actualizar detalles del usuario en el menú de hamburguesas

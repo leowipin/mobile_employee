@@ -1,18 +1,25 @@
-
-
-<ion-content data-tap-disabled="true">
+<ion-header>
   <div>
     <ion-buttons slot="start">
-        <ion-img src="assets/img/retroceder.png" (click)="home()"></ion-img>
+      <ion-menu-button>
+        <ion-img style="width: 50px; height: 50px;" src="assets/menuhamburguesarojo.png"></ion-img>
+      </ion-menu-button>
     </ion-buttons>
     <div class="tope">
       <span>
       </span>
       <div class="logosepro">
-        <ion-img style="width: 160px; height: 150spx;" src="assets/img/logosepro.png"></ion-img>
+        <ion-img style="width: 180px; height: 150spx;" src="assets/img/logosepro.png"></ion-img>
       </div>
     </div>
   </div>
+    <div class="retro">
+      <ion-img onclick="serviciosencurso()" src="assets/img/flecha-retro.png"></ion-img>
+    </div>
+  
+</ion-header>
+
+<ion-content data-tap-disabled="true">
 
   <div class="titulo">
     <h4>MI PERFIL</h4>
@@ -20,6 +27,7 @@
 
   <span class="circle-grey">
     <div class="logo">
+
       <ion-img  [src]= "perfil" ></ion-img>
     </div>
   </span>
