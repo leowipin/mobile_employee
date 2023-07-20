@@ -37,9 +37,9 @@ export class ServicioEnCursoPage implements OnInit {
     private modalController: ModalController,
     private clienteWAService: ClienteWAService,
     private httpClient: HttpClient,
-    private actionSheetCtrl: ActionSheetController,
-  //  private commonModule: CommonModule
-  ) {}
+    private actionSheetCtrl: ActionSheetController
+  ) //  private commonModule: CommonModule
+  {}
   ngOnInit() {
     this.getTodosServicios();
     this.getDateService();
@@ -60,9 +60,9 @@ export class ServicioEnCursoPage implements OnInit {
     const token = localStorage.getItem('token');
     this.clienteWAService.getDateService(token).subscribe(
       (response: any) => {
-       // console.log(response);
+        // console.log(response);
         this.datosServicio = response;
-       // console.log(this.datosServicio);
+        // console.log(this.datosServicio);
       },
       (error) => {
         // Manejar el error de la solicitud HTTP
@@ -81,10 +81,10 @@ export class ServicioEnCursoPage implements OnInit {
     const token = localStorage.getItem('token');
     this.clienteWAService.getServiciosTodos(token).subscribe(
       (response) => {
-         console.log('hola');
-         this.serviciosTodos = response;
-         console.log(this.serviciosTodos);
-       },
+        console.log('hola');
+        this.serviciosTodos = response;
+        console.log(this.serviciosTodos);
+      },
       (error) => {
         // Manejar el error de la solicitud HTTP
         console.error(error); // Imprime el error en la consola para fines de depuración
