@@ -14,8 +14,8 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 import { ClienteWAService } from './servicios/login-registro/login-registro.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalMensajeComponent } from 'src/app/modal-mensaje/modal-mensaje.component';
-import { ServicioEnCursoPage } from './servicio-en-curso/servicio-en-curso.page';
 import { CommonModule } from '@angular/common';
+import { ServicioEnCursoPage } from './servicio-en-curso/servicio-en-curso.page';
 
 @NgModule({
   declarations: [AppComponent,

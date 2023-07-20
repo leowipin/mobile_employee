@@ -14,13 +14,14 @@ export class AppComponent {
   recibido: any;
   name: string;
 
-  constructor(private route: ActivatedRoute,
+  constructor(
+    private route: ActivatedRoute,
     private navCtrl: NavController,
     private barcodeScanner: BarcodeScanner,
     private clienteWAService: ClienteWAService,
-    private userDataService: UserDataService,
-    ) {
-    this.userDataService.name$.subscribe(name => {
+    private userDataService: UserDataService
+  ) {
+    this.userDataService.name$.subscribe((name) => {
       this.name = name;
     });
   }
